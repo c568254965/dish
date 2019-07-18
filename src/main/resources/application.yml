@@ -1,8 +1,6 @@
 server:
     port: 6822
 
-
-
 eureka:
   client:
     register-with-eureka: true
@@ -13,7 +11,10 @@ eureka:
     instance-id: huarui_dishes   #自定义服务名称信息
     prefer-ip-address: true     #访问路径可以显示IP地址
 spring:
-
+  profiles:
+    active: dev
+  application:
+    name: huaruidishes
   data:
     elasticsearch:
       cluster-nodes: 127.0.0.1:9300
@@ -22,10 +23,6 @@ spring:
       repositories:
         enabled: true
 
-  profiles:
-    active: dev
-  application:
-    name: huaruidishes
 
   datasource:
     # type: com.alibaba.druid.pool.DruidDataSource
@@ -47,6 +44,39 @@ mybatis:
 orderQueue: orderQueue
 
 
-#mapper:
-#  mappers: com.huarui.dao
-#  identity: mysql
+---
+spring:
+  profiles: test
+
+  datasource:
+    # type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://140.143.227.51:3306/huarui_res
+    username: root
+    password: 123456
+  activemq:
+    broker-url: tcp://140.143.227.51:61616
+    user: admin
+    password: admin
+  jms:
+    pub-sub-domain: false
+  data:
+    elasticsearch:
+      cluster-nodes: 140.143.227.51:9300
+      cluster-name: es-from-csrr
+
+      repositories:
+        enabled: true
+
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://140.143.227.51:6801/eureka/
+  instance:
+      instance-id: huarui_dish   #自定义服务名称信息
+      prefer-ip-address: true     #访问路径可以显示IP地址
+
+
