@@ -37,6 +37,11 @@ spring:
     password: admin
   jms:
     pub-sub-domain: false
+  zipkin:
+    base-url: http://localhost:6866
+  sleuth:
+    sampler:
+      probability: 1.0
 mybatis:
   type-aliases-package: com.huarui.model
 
