@@ -22,6 +22,5 @@ public class MqConsumer {
             System.out.println("菜的id:"+mapMessage.getLong("dishId"));
         }
 
-
     }
 }
