@@ -1,5 +1,7 @@
 server:
     port: 6822
+    servlet:
+      context-path: /csrr/dish
 
 eureka:
   client:
