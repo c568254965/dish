@@ -68,15 +68,15 @@ spring:
   data:
     elasticsearch:
       cluster-nodes: 140.143.227.51:9300
-      cluster-name: es-from-csrr
+      cluster-name: csrr-es-cluster
 
       repositories:
         enabled: true
-  zipkin:
-    base-url: http://140.143.227.51:6866
-  sleuth:
-    sampler:
-      probability: 1.0
+#  zipkin:
+#    base-url: http://140.143.227.51:6866
+#  sleuth:
+#    sampler:
+#      probability: 1.0
 
 
 eureka:
