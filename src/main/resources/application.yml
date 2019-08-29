@@ -86,7 +86,7 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     serviceUrl:
-      defaultZone: http://140.143.227.51:6801/eureka/
+      defaultZone: http://140.143.227.51:31801/eureka/
   instance:
       instance-id: huarui_dish   #自定义服务名称信息
       prefer-ip-address: true     #访问路径可以显示IP地址
