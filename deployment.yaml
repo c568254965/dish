@@ -12,7 +12,7 @@ spec:
     spec:
      containers:
      - name: huarui-dish
-       image: c568254965/dish:v1.0
+       image: c568254965/huarui_dish:v1.0
        tty: true
        ports:
        - containerPort: 6822
