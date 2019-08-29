@@ -8,5 +8,6 @@ spec:
   ports:
        - port: 6822
          targetPort: 6822
+         nodePort: 31822
   selector:
     app: huarui-dish
