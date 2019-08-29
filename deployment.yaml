@@ -1,17 +1,17 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: huarui_dish
+  name: huarui-dish
   namespace: local
 spec:
   replicas: 1
   template:
     metadata:
      labels:
-       app: huarui_dish
+       app: huarui-dish
     spec:
      containers:
-     - name: huarui_dish
+     - name: huarui-dish
        image: c568254965/dish:v1.1
        tty: true
        ports:
