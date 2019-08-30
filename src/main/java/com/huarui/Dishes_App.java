@@ -14,6 +14,7 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan(basePackages = {"com.huarui","com.huarui.es"})
 public class Dishes_App
 {
+
 	public static void main(String[] args)
 	{
 		SpringApplication.run(Dishes_App.class, args);

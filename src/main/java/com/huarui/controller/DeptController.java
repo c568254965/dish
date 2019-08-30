@@ -36,6 +36,15 @@ public class DeptController
 
 	}
 
+	@RequestMapping(value = "/testUpdate", method = RequestMethod.GET)
+	public String testUpdate()
+	{
+
+
+		return "更新接口...";
+
+	}
+
 
 	@RequestMapping(value = "testEs",method = RequestMethod.GET)
 	public List<Menu> testEs(){
