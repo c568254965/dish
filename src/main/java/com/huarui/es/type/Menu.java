@@ -27,6 +27,7 @@ public class Menu implements Serializable{
     private Long id;
 
     private String title;
+
     private String tags;
     private String imtro;
     private String ingredients;

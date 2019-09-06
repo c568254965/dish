@@ -1,0 +1,49 @@
+{
+  "settings":{
+    "number_of_shards": "6",
+    "number_of_replicas": "1",
+
+    "analysis":{
+      "analyzer":{
+        "ik":{
+          "tokenizer":"ik_max_word"
+        }
+      }
+    }
+  },
+  "mappings":{
+    "novel":{
+      "properties":{
+        "author":{
+          "type":"text"
+        },
+        "wordCount":{
+          "type":"integer"
+        },
+        "publishDate":{
+          "type":"date",
+          "format":"yyyy-MM-dd HH:mm:ss || yyyy-MM-dd"
+        },
+        "briefIntroduction":{
+          "type":"text",
+           "analyzer": "ik_smart",
+           "search_analyzer": "ik_smart"
+        },
+        "bookName":{
+          "type":"text",
+           "analyzer": "ik_smart",
+           "search_analyzer": "ik_smart"
+        },
+"id": {
+"type": "long"
+}
+
+      }
+    }
+  }
+}
+
+
+
+/csrr/dish/addNovel/1/100/程序员劝退手册/扫地僧/我爱北京天安门，杰克逊的最新专辑发布了快去买哦
+/csrr/dish/addNovel/2/200/梦的解析/弗洛伊德/剖析人性，解脱自我，你开心了吗

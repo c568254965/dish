@@ -2,6 +2,8 @@ package com.huarui.es.repository;
 
 import com.huarui.es.type.Menu;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 
@@ -17,7 +19,5 @@ public interface MenuRepository extends ElasticsearchRepository<Menu,Long> {
     List<Menu> findByTitle(String name);
     List<Menu> findAllBy();
     List<Menu> findMenuByStepsAndTitle(String step,String title);
-
-
 
 }

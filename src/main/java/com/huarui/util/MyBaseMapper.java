@@ -13,29 +13,29 @@ import java.util.List;
 
 
 public interface MyBaseMapper<T>  extends Mapper<T>, MySqlMapper<T> {
-@Options(
-        useGeneratedKeys = true,
-        keyProperty = "id"
-)
-@InsertProvider(
-        type = MyBaseInsertProvider.class,
-        method = "dynamicSQL"
-)
-    int insertReturnId(T var1);
-
-@Options(
-        useGeneratedKeys = true,
-        keyProperty = "id"
-)
-@InsertProvider(
-        type = MyBaseInsertProvider.class,
-        method = "dynamicSQL"
-)
-    int insertSelectiveReturnId(T var1);
-
-@InsertProvider(
-        type = MyBaseInsertProvider.class,
-        method = "dynamicSQL"
-)
-    int insertListNotKey(List<T> var1);
+//@Options(
+//        useGeneratedKeys = true,
+//        keyProperty = "id"
+//)
+//@InsertProvider(
+//        type = MyBaseInsertProvider.class,
+//        method = "dynamicSQL"
+//)
+//    int insertReturnId(T var1);
+//
+//@Options(
+//        useGeneratedKeys = true,
+//        keyProperty = "id"
+//)
+//@InsertProvider(
+//        type = MyBaseInsertProvider.class,
+//        method = "dynamicSQL"
+//)
+//    int insertSelectiveReturnId(T var1);
+//
+//@InsertProvider(
+//        type = MyBaseInsertProvider.class,
+//        method = "dynamicSQL"
+//)
+//    int insertListNotKey(List<T> var1);
 }

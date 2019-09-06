@@ -45,7 +45,17 @@ public class DishService {
             dish.setTitle(datum.getTitle());
 
             dishMapper.insert(dish);
+
+            System.out.println(dish.getId()+"~~~");
         }
 
+    }
+
+    public void inDBreturnId() {
+
+        Dish dish = new Dish();
+        dish.setTitle("test");
+        dishMapper.insert(dish);
+        System.out.println(dish.getId()+"自增Id..");
     }
 }
