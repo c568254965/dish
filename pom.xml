@@ -130,6 +130,15 @@
         </dependency>
 
 
+        <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.59</version>
+        </dependency>
+
+
+
     </dependencies>
 
     <dependencyManagement>
@@ -151,6 +160,15 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+
+             <plugin>  
+                        <groupId>org.springframework.boot</groupId>  
+                        <artifactId>spring-boot-maven-plugin</artifactId>  
+                        <configuration>  
+                                <mainClass>com.huarui.Dishes_App</mainClass>  
+                            </configuration>  
+                    </plugin>  
+
         </plugins>
     </build>
 

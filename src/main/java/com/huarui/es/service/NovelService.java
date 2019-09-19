@@ -9,6 +9,9 @@ import org.elasticsearch.index.query.MatchQueryBuilder;
 import org.elasticsearch.index.query.MultiMatchQueryBuilder;
 import org.elasticsearch.index.query.QueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
+import org.elasticsearch.search.aggregations.AggregationBuilders;
+import org.elasticsearch.search.aggregations.metrics.avg.AvgAggregationBuilder;
+import org.elasticsearch.search.aggregations.metrics.max.MaxAggregationBuilder;
 import org.elasticsearch.search.sort.FieldSortBuilder;
 import org.elasticsearch.search.sort.SortBuilders;
 import org.elasticsearch.search.sort.SortOrder;
@@ -56,12 +59,23 @@ public class NovelService {
         MatchQueryBuilder builder2 = QueryBuilders.matchQuery("briefIntroduction",query);
 
         NativeSearchQueryBuilder nativeSearchQueryBuilder = new NativeSearchQueryBuilder();
-        nativeSearchQueryBuilder.withQuery(queryBuilder);
+        //nativeSearchQueryBuilder.withQuery(queryBuilder);
 
-        Page<Novel> search = novelRepository.search(nativeSearchQueryBuilder.build());
+        //Page<Novel> search = novelRepository.search(nativeSearchQueryBuilder.build());
 
 
-        return search;
+        //                                                           自己取的名字                 es中的字段名称
+        MaxAggregationBuilder aggBuilder = AggregationBuilders.max("wordCount-csrr").field("wordCount1");
+
+        AvgAggregationBuilder wordCount = AggregationBuilders.avg("wordCount");
+
+
+        nativeSearchQueryBuilder.addAggregation(wordCount);
+
+        Page<Novel> search1 = novelRepository.search(nativeSearchQueryBuilder.build());
+
+
+        return search1;
 
 
     }

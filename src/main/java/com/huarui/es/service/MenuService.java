@@ -5,6 +5,9 @@ import com.huarui.es.type.Menu;
 import org.elasticsearch.index.query.MultiMatchQueryBuilder;
 import org.elasticsearch.index.query.QueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
+import org.elasticsearch.search.aggregations.AggregationBuilders;
+import org.elasticsearch.search.aggregations.metrics.avg.AvgAggregationBuilder;
+import org.elasticsearch.search.aggregations.metrics.max.MaxAggregationBuilder;
 import org.elasticsearch.search.sort.FieldSortBuilder;
 import org.elasticsearch.search.sort.SortBuilders;
 import org.elasticsearch.search.sort.SortOrder;
@@ -52,12 +55,12 @@ public class MenuService {
         FieldSortBuilder sort = SortBuilders.fieldSort("id").order(SortOrder.ASC);
 
 
-        nativeSearchQueryBuilder.withSort(sort);  //排序
-        nativeSearchQueryBuilder.withQuery(queryBuilder); //查询条件
-        nativeSearchQueryBuilder.withPageable(PageRequest.of(startPage,pageSize)); //分页...
-        NativeSearchQuery build = nativeSearchQueryBuilder.build();
+//        nativeSearchQueryBuilder.withSort(sort);  //排序
+//        nativeSearchQueryBuilder.withQuery(queryBuilder); //查询条件
+//        nativeSearchQueryBuilder.withPageable(PageRequest.of(startPage,pageSize)); //分页...
+//        NativeSearchQuery build = nativeSearchQueryBuilder.build();
 
-        Page<Menu> page = menuRepository.search(build);
+  //      Page<Menu> page = menuRepository.search(build);
 
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         //多字段查询...                                  没有中文分词
@@ -68,8 +71,13 @@ public class MenuService {
         }
 
         //*****************************************
-        //中文分词..
+        MaxAggregationBuilder maxBuilder = AggregationBuilders.max("wordCount-csrr").field("wordCount1");
 
-        return page;
+        nativeSearchQueryBuilder.addAggregation(maxBuilder);
+
+
+
+
+        return null;
     }
 }

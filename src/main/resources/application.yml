@@ -13,8 +13,6 @@ eureka:
     instance-id: huarui_dishes   #自定义服务名称信息
     prefer-ip-address: true     #访问路径可以显示IP地址
 spring:
-#  profiles:
-#    active: dev
   profiles: dev
   application:
     name: huaruidishes
@@ -62,7 +60,8 @@ server:
     servlet:
       context-path: /csrr/dish
 spring:
-
+  application:
+    name: huaruidishes
   profiles:
     active: test
 
@@ -78,8 +77,10 @@ spring:
     password: admin
   jms:
     pub-sub-domain: false
+
   data:
     elasticsearch:
+
       cluster-nodes: 140.143.227.51:9300
       cluster-name: csrr-es-cluster
 
