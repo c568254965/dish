@@ -141,18 +141,18 @@
 
     </dependencyManagement>
 
-    <build>  
-            <plugins>  
-                    <plugin>  
-                            <groupId>org.springframework.boot</groupId>  
-                            <artifactId>spring-boot-maven-plugin</artifactId>  
-                            <configuration>  
-                                    <mainClass>com.rensanning.springboot.SpringBootDemoApplication</mainClass>  
-                                </configuration>  
-                        </plugin>  
-                </plugins>  
-    </build>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.huarui.Dishes_App</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
     <repositories>
         <repository>
@@ -191,6 +191,5 @@
             </snapshots>
         </pluginRepository>
     </pluginRepositories>
-
 
 </project>
